@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "printBoard.h"
+#include "libchess/printBoard.h"
 
 #define BOARD_ROWS 10
 #define BOARD_COLUMNS 10
