@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "libchess/printBoard.h"
+#include "libchess/graffitiPrint.h"
 
 #define BOARD_ROWS 10
 #define BOARD_COLUMNS 10
@@ -8,6 +9,9 @@
 
 int main()
 {
+    graffitiPrint();
+
+
     int flag = 1;
     char move[6];
 
