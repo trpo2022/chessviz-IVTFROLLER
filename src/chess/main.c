@@ -2,14 +2,14 @@
 #include "libchess/printBoard.h"
 #include "libchess/graffitiPrint.h"
 
-#define BOARD_ROWS 10
-#define BOARD_COLUMNS 10
+#define BOARD_ROWS 8
+#define BOARD_COLUMNS 8
 
 int pawnWhitePosition[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 int pawnBlackPosition[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 
 
-char board[8][8] = {
+char board[BOARD_ROWS][BOARD_COLUMNS] = {
                     { 'R' , 'H' , 'B' , 'K' , 'Q' , 'B' , 'H' , 'R' },
                     { 'P' , 'P' , 'P' , 'P' , 'P' , 'P' , 'P' , 'P' },
                     { ' ' , ' ' , ' ' , ' ' , ' ' , ' ' , ' ' , ' ' },
