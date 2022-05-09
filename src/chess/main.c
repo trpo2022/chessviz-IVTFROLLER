@@ -5,48 +5,72 @@
 #define BOARD_ROWS 10
 #define BOARD_COLUMNS 10
 
+int pawnWhitePosition[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+int pawnBlackPosition[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 
 
-int main()
+char board[8][8] = {
+                    { 'R' , 'H' , 'B' , 'K' , 'Q' , 'B' , 'H' , 'R' },
+                    { 'P' , 'P' , 'P' , 'P' , 'P' , 'P' , 'P' , 'P' },
+                    { ' ' , ' ' , ' ' , ' ' , ' ' , ' ' , ' ' , ' ' },
+                    { ' ' , ' ' , ' ' , ' ' , ' ' , ' ' , ' ' , ' ' },
+                    { ' ' , ' ' , ' ' , ' ' , ' ' , ' ' , ' ' , ' ' },
+                    { ' ' , ' ' , ' ' , ' ' , ' ' , ' ' , ' ' , ' ' },
+                    { 'p' , 'p' , 'p' , 'p' , 'p' , 'p' , 'p' , 'p' },
+                    { 'r' , 'h' , 'b' , 'k' , 'q' , 'b' , 'h' , 'r' }
+                    };
+
+
+
+void main()
 {
-    graffitiPrint();
+    int  x = 0;
+    char ch;
+    char firstPlayerName[20];
+    char secondPlayerName[20];
+    char flag;
+
+    printf("\n\t-> CHESS GAME <- \n");
+    printf("\n     Press any button to start \n");
+
+    getchar();
+    system("clear");
+
+    printf("Please, enter the name for the first player(No more than 20 symbols): ");
+    scanf("%s", firstPlayerName);
+
+    system("clear");
+
+    printf("Please, enter the name for the second player(No more than 20 symbols): ");
+    scanf("%s", secondPlayerName);
+
+    system("clear");
 
 
-    int flag = 1;
-    char move[6];
-
-
-    char board[BOARD_ROWS][BOARD_COLUMNS]
-            = {{'8', '|', 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'},
-               {'7', '|', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
-               {'6', '|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-               {'5', '|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-               {'4', '|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-               {'3', '|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-               {'2', '|', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'},
-               {'1', '|', 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'},
-               {' ', ' ', '_', '_', '_', '_', '_', '_', '_', '_'},
-               {' ', ' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'},
-               };
-
-    while(flag != 0){
-        linePrint();
-        printf("\n");
-        boardPrint(board);
-        printf("\nMove: ");
-        for(int i = 0; i < 6;i++){
-            scanf("%c", &move[i]);
-            if(move[0] == 'q'){
-                flag = 0;
-                break;
-            }
+    do
+    {
+        x++ ;
+        system("clear") ;
+        displayDesk();
+        while(1){
+        if((x % 2) == 0){
+            secondPlayerMove(secondPlayerName);
+            x++;
+            system("clear");
+            displayDesk();
+        }else {
+            firstPlayerMove(firstPlayerName);
+            x++;
+            system("clear");
+            displayDesk();
         }
-
-        printf("\nThe move was: %s\n", move);
-        
     }
 
-    printf("\n");
+    printf( " \n\nPress Enter To Continue ! \n\n " ) ;
 
-    return 0;
+    ch = getchar();
+    }while( ch == 13 ) ;
+
+
 }
+
