@@ -51,18 +51,18 @@ void main()
     {
         x++ ;
         system("clear") ;
-        displayDesk();
+        displayDesk(board);
         while(1){
         if((x % 2) == 0){
             secondPlayerMove(secondPlayerName);
             x++;
             system("clear");
-            displayDesk();
+            displayDesk(board);
         }else {
             firstPlayerMove(firstPlayerName);
             x++;
             system("clear");
-            displayDesk();
+            displayDesk(board);
         }
     }
 
