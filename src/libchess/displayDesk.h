@@ -1,7 +1,9 @@
+#ifndef DISPLAY_DESK
+#define DISPLAY_DESK
+
 #include <stdio.h>
 
-#define BOARD_ROWS 8
-#define BOARD_COLUMNS 8
+void displayDesk(char board[][]);
 
-void boardPrint(char board[][]);
+#endif /* DISPLAY_DESK */
 
